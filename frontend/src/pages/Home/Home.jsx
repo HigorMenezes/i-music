@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from '../../core/axios';
 
-import Main from '../../layouts/Main';
-
 import { getCookie } from '../../utils/cookie';
 
 function Home() {
@@ -16,11 +14,7 @@ function Home() {
       });
   }, []);
 
-  return (
-    <Main>
-      <div>Home</div>
-    </Main>
-  );
+  return <div>Home</div>;
 }
 
 export default Home;

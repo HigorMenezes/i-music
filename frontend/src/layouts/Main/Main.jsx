@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
+
+import Home from '../../pages/Home';
 
 import {
   Container,
@@ -8,20 +10,25 @@ import {
   PlayerContainer,
 } from './Main.styles';
 
-function Main({ children }) {
+function Main() {
+  const { path } = useRouteMatch();
+
   return (
     <Container>
       <div className="group">
         <NavbarContainer />
-        <MainContainer>{children}</MainContainer>
+        <MainContainer>
+          <Switch>
+            <Route path={`${path}/`} exact>
+              <Home />
+            </Route>
+            <Redirect to={`${path}/`} />
+          </Switch>
+        </MainContainer>
       </div>
       <PlayerContainer />
     </Container>
   );
 }
-
-Main.propTypes = {
-  children: PropTypes.element.isRequired,
-};
 
 export default Main;

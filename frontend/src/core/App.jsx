@@ -9,6 +9,8 @@ import {
 import '../styles/variables.css';
 import GlobalStyle from '../styles/GlobalStyle';
 
+import Main from '../layouts/Main';
+
 import Login from '../pages/Login';
 import Home from '../pages/Home';
 
@@ -18,13 +20,15 @@ function App() {
       <GlobalStyle />
       <Router>
         <Switch>
+          <Route path="/i-music">
+            <Main>
+              <Home />
+            </Main>
+          </Route>
           <Route path="/login" exact>
             <Login />
           </Route>
-          <Route path="/i-music">
-            <Home />
-          </Route>
-          <Redirect from="*" to="/login" />
+          <Redirect to="/login" />
         </Switch>
       </Router>
     </>
