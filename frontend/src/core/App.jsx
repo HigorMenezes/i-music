@@ -1,13 +1,27 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+
+import Login from '../pages/Login';
+import Home from '../pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <div>iMusic</div>
-      <a type="button" href="http://localhost:3001/session">
-        Login
-      </a>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login" exact>
+          <Login />
+        </Route>
+        <Route path="/i-music">
+          <Home />
+        </Route>
+        <Redirect from="*" to="/login" />
+      </Switch>
+    </Router>
   );
 }
 
