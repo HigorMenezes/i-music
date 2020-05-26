@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
 
+import NavbarMenu from '../../containers/NavbarMenu';
+
 import Home from '../../pages/Home';
 
 import {
@@ -16,7 +18,9 @@ function Main() {
   return (
     <Container>
       <div className="group">
-        <NavbarContainer />
+        <NavbarContainer>
+          <NavbarMenu />
+        </NavbarContainer>
         <MainContainer>
           <Switch>
             <Route path={`${path}/`} exact>
