@@ -18,22 +18,20 @@ function Main() {
 
   return (
     <Container>
-      <div className="group">
-        <NavbarContainer>
-          <NavbarMenu />
-        </NavbarContainer>
-        <MainContainer>
-          <Switch>
-            <Route path={`${path}/`} exact>
-              <Home />
-            </Route>
-            <Route path={`${path}/tracks`} exact>
-              <Tracks />
-            </Route>
-            <Redirect to={`${path}/`} />
-          </Switch>
-        </MainContainer>
-      </div>
+      <NavbarContainer>
+        <NavbarMenu />
+      </NavbarContainer>
+      <MainContainer>
+        <Switch>
+          <Route path={`${path}/`} exact>
+            <Home />
+          </Route>
+          <Route path={`${path}/tracks`} exact>
+            <Tracks />
+          </Route>
+          <Redirect to={`${path}/`} />
+        </Switch>
+      </MainContainer>
       <PlayerContainer />
     </Container>
   );

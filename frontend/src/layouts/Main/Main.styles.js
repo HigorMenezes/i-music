@@ -4,33 +4,32 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   background-color: var(--background-color);
-
-  display: flex;
-  flex-direction: column;
-
-  .group {
-    width: 100%;
-    height: 100%;
-    display: flex;
-  }
 `;
 
 export const MainContainer = styled.main`
   width: 100%;
-  height: 100%;
-  padding: 10px;
+  height: calc(100% - var(--player-height));
+  padding: 20px;
+  padding-left: calc(var(--navbar-width) + 20px);
+  background-color: var(--background-color);
+  overflow: auto;
 `;
 
 export const NavbarContainer = styled.nav`
-  min-width: var(--navbar-width);
-  width: 25%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--navbar-width);
   height: 100%;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--navbar-color);
 `;
 
 export const PlayerContainer = styled.footer`
-  height: var(--player-height);
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
+  padding-left: var(--navbar-width);
+  height: var(--player-height);
   background-color: var(--player-background);
-  padding: 10px;
 `;

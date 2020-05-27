@@ -1,8 +1,9 @@
 body {
   --text-color: #eeeeee;
-  --background-color: rgba(40, 40, 57, 0.96);
+  --navbar-color: rgb(34, 34, 53);
+  --background-color: rgb(40, 40, 57);
   --body-background-gradient: linear-gradient(to bottom, #4b134f, #c94b4b);
-  --player-background: #91a4b8;
+  --player-background: rgb(121, 172, 227);
   --navbar-width: 250px;
   --player-height: 85px;
 }

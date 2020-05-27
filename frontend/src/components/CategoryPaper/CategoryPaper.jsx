@@ -5,7 +5,7 @@ import { Paper } from './CategoryPaper.styles';
 
 function CategoryPaper({ id, name, iconUrl }) {
   return (
-    <Paper iconUrl={iconUrl}>
+    <Paper iconUrl={iconUrl} data-id={id}>
       <span className="category-name">{name}</span>
     </Paper>
   );

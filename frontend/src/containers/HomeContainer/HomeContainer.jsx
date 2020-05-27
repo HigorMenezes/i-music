@@ -1,19 +1,45 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import CategoryPaper from '../../components/CategoryPaper';
 
-import { CategoriesList } from './HomeContainer.styles';
+import {
+  CategoriesList,
+  ShowMoreCategories,
+  ShowMoreCategoriesArrow,
+} from './HomeContainer.styles';
 
 function HomeContainer({ categories }) {
+  const [showMoreCategories, setShowMoreCategories] = useState(false);
+  const categoriesListRef = useRef();
+
   return (
-    <CategoriesList>
-      {categories.map(({ id, name, icons }) => {
-        return (
-          <CategoryPaper key={id} id={id} name={name} iconUrl={icons[0].url} />
-        );
-      })}
-    </CategoriesList>
+    <>
+      <CategoriesList
+        ref={categoriesListRef}
+        style={{
+          height: showMoreCategories
+            ? categoriesListRef.current.scrollHeight
+            : '160px',
+        }}
+      >
+        {categories.map(({ id, name, icons }) => {
+          return (
+            <CategoryPaper
+              key={id}
+              id={id}
+              name={name}
+              iconUrl={icons[0].url}
+            />
+          );
+        })}
+      </CategoriesList>
+      <ShowMoreCategories
+        onClick={() => setShowMoreCategories(!showMoreCategories)}
+      >
+        <ShowMoreCategoriesArrow isShowingMore={showMoreCategories} />
+      </ShowMoreCategories>
+    </>
   );
 }
 
