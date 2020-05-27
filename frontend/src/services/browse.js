@@ -4,6 +4,13 @@ import { getCookie } from '../utils/cookie';
 export function getAllCategories() {
   return axios.get('/browse/categories', {
     headers: { Authorization: `Bearer ${getCookie('access_token')}` },
-    params: { limit: 20 },
+    params: { limit: 20, country: 'US' },
+  });
+}
+
+export function getAllFeaturedPlaylists() {
+  return axios.get('browse/featured-playlists', {
+    headers: { Authorization: `Bearer ${getCookie('access_token')}` },
+    params: { limit: 20, country: 'US' },
   });
 }

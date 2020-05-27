@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import HomeContainer from '../../containers/HomeContainer';
+import CategoriesList from '../../containers/CategoriesList';
 
 import { getAllCategories } from '../../services/browse';
 
@@ -13,7 +13,7 @@ function Home() {
     });
   }, []);
 
-  return <HomeContainer categories={categories} />;
+  return <CategoriesList categories={categories} />;
 }
 
 export default Home;

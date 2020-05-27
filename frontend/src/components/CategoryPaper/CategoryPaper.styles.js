@@ -8,6 +8,8 @@ export const Paper = styled.div`
   margin: 5px;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border: 2px solid white;
 
   &::before {
     content: '';
@@ -21,19 +23,19 @@ export const Paper = styled.div`
     background-position: center center;
     background-size: 150px;
 
-    transition: filter 200ms;
+    transition: filter 200ms, transform 200ms;
   }
 
   .category-name {
     position: absolute;
     width: 100%;
-    padding: 15px 5px;
+    padding: 5px;
     background-color: rgba(0, 0, 0, 0.6);
-    bottom: 0;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     color: var(--text-color);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     word-wrap: break-word;
     text-align: center;
@@ -42,5 +44,6 @@ export const Paper = styled.div`
 
   &:hover::before {
     filter: saturate(1.5);
+    transform: scale(1.1);
   }
 `;

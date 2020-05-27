@@ -4,23 +4,25 @@ import PropTypes from 'prop-types';
 import CategoryPaper from '../../components/CategoryPaper';
 
 import {
-  CategoriesList,
-  ShowMoreCategories,
-  ShowMoreCategoriesArrow,
-} from './HomeContainer.styles';
+  ListTitle,
+  List,
+  ShowMore,
+  ShowMoreArrow,
+} from './CategoriesList.styles';
 
-function HomeContainer({ categories }) {
+function CategoriesList({ categories }) {
   const [showMoreCategories, setShowMoreCategories] = useState(false);
-  const categoriesListRef = useRef();
+  const listRef = useRef();
 
   return (
     <>
-      <CategoriesList
-        ref={categoriesListRef}
+      <ListTitle>Categories</ListTitle>
+      <List
+        ref={listRef}
         style={{
           height: showMoreCategories
-            ? categoriesListRef.current.scrollHeight
-            : '160px',
+            ? listRef.current.scrollHeight + 10
+            : '165px',
         }}
       >
         {categories.map(({ id, name, icons }) => {
@@ -33,17 +35,15 @@ function HomeContainer({ categories }) {
             />
           );
         })}
-      </CategoriesList>
-      <ShowMoreCategories
-        onClick={() => setShowMoreCategories(!showMoreCategories)}
-      >
-        <ShowMoreCategoriesArrow isShowingMore={showMoreCategories} />
-      </ShowMoreCategories>
+      </List>
+      <ShowMore onClick={() => setShowMoreCategories(!showMoreCategories)}>
+        <ShowMoreArrow isShowingMore={showMoreCategories} />
+      </ShowMore>
     </>
   );
 }
 
-HomeContainer.propTypes = {
+CategoriesList.propTypes = {
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string,
@@ -60,8 +60,8 @@ HomeContainer.propTypes = {
   ),
 };
 
-HomeContainer.defaultProps = {
+CategoriesList.defaultProps = {
   categories: [],
 };
 
-export default HomeContainer;
+export default CategoriesList;
