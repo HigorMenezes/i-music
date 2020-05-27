@@ -4,6 +4,7 @@ import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
 import NavbarMenu from '../../containers/NavbarMenu';
 
 import Home from '../../pages/Home';
+import Tracks from '../../pages/Tracks';
 
 import {
   Container,
@@ -25,6 +26,9 @@ function Main() {
           <Switch>
             <Route path={`${path}/`} exact>
               <Home />
+            </Route>
+            <Route path={`${path}/tracks`} exact>
+              <Tracks />
             </Route>
             <Redirect to={`${path}/`} />
           </Switch>
