@@ -55,7 +55,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    background-color: var(--body-background);
+    background: var(--body-background-gradient);
+    background-attachment:fixed;
     font-family: 'Roboto', sans-serif;
   }
 `;
