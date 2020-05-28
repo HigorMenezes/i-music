@@ -1,15 +1,31 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ArrowIosDownwardOutline } from 'styled-icons/evaicons-outline';
 
-export const List = styled.div`
-  width: 100%;
+const renderListItemFrom = (showAll, n) => {
+  if (showAll) {
+    return css`
+      & > li {
+        width: calc(100% / ${n});
+      }
+    `;
+  }
+
+  return css`
+    & > li {
+      width: calc(100% / ${n});
+      &:nth-child(n + ${n + 1}) {
+        display: none;
+      }
+    }
+  `;
+};
+
+export const List = styled.ol`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
   overflow: hidden;
 
-  transition: height 500ms;
+  ${(props) => renderListItemFrom(props.showAll, 4)}
 `;
 
 export const ShowMore = styled.button`

@@ -1,18 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
   height: 100vh;
-  background-color: var(--background-color);
 `;
 
 export const MainContainer = styled.main`
-  width: 100%;
-  height: calc(100% - var(--player-height));
+  height: 100%;
   padding: 20px;
-  padding-left: calc(var(--navbar-width) + 20px);
-  background-color: var(--background-color);
+  margin-left: var(--navbar-width);
   overflow: auto;
+  background-color: var(--background-color);
 `;
 
 export const NavbarContainer = styled.nav`
@@ -20,16 +17,16 @@ export const NavbarContainer = styled.nav`
   left: 0;
   top: 0;
   width: var(--navbar-width);
+  padding-bottom: var(--player-height);
   height: 100%;
-  background-color: var(--navbar-color);
+  background-color: var(--navbar-background-color);
 `;
 
 export const PlayerContainer = styled.footer`
   position: fixed;
+  height: var(--player-height);
+  width: var(--navbar-width);
   left: 0;
   bottom: 0;
-  width: 100%;
-  padding-left: var(--navbar-width);
-  height: var(--player-height);
-  background-color: var(--player-background);
+  background-color: var(--player-background-color);
 `;

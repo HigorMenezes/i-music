@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    background: var(--body-background-gradient);
+    background-color: var(--body-background-color);
     background-attachment:fixed;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;

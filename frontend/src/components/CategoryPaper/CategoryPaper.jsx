@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Paper } from './CategoryPaper.styles';
+import { Container, Image, Name } from './CategoryPaper.styles';
 
 function CategoryPaper({ id, name, iconUrl }) {
   return (
-    <Paper iconUrl={iconUrl} data-id={id}>
-      <span className="category-name">{name}</span>
-    </Paper>
+    <Container data-id={id}>
+      <Image src={iconUrl} alt={name} />
+      <Name>{name}</Name>
+    </Container>
   );
 }
 

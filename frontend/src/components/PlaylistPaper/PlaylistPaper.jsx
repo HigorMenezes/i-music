@@ -6,7 +6,7 @@ import { Container, Image, Name, Description } from './PlaylistPaper.styles';
 function PlaylistPaper({ id, imageUrl, name, description }) {
   return (
     <Container data-id={id}>
-      <Image imageUrl={imageUrl} />
+      <Image src={imageUrl} alt={name} />
       <Name>{name}</Name>
       <Description>{description}</Description>
     </Container>

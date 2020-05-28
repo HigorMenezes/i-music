@@ -13,14 +13,7 @@ function CategoriesList({ categories }) {
   return (
     <>
       <CustomTitle>Categories</CustomTitle>
-      <List
-        ref={listRef}
-        style={{
-          height: showMoreCategories
-            ? listRef.current.scrollHeight + 10
-            : '165px',
-        }}
-      >
+      <List ref={listRef} showAll={showMoreCategories}>
         {categories.map(({ id, name, icons }) => {
           return (
             <CategoryPaper

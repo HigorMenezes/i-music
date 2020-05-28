@@ -1,31 +1,26 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.li`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  padding: 5px;
 `;
 
-export const Image = styled.div`
-  position: relative;
+export const Image = styled.img`
   width: 100%;
-  height: 250px;
-  ${(props) => `background-image: url(${props.imageUrl});`}
-  background-position: center center;
-  background-size: cover;
+  height: auto;
   border-radius: 5px;
 `;
 
 export const Name = styled.h3`
-  width: 100%;
   margin: 5px;
   color: var(--text-color);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 `;
 
 export const Description = styled.p`
   margin: 5px;
-  width: 100%;
   color: var(--subtext-color);
   font-weight: 400;
 `;
