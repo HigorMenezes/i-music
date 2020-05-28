@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 import { ArrowIosDownwardOutline } from 'styled-icons/evaicons-outline';
 
-export const ListTitle = styled.h2`
-  font-size: 24px;
-  color: var(--text-color);
-  margin: 10px 10px 20px 10px;
-  width: 100%;
-  font-weight: bold;
-  letter-spacing: 2px;
-`;
-
 export const List = styled.div`
   width: 100%;
   display: flex;

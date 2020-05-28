@@ -11,6 +11,6 @@ export function getAllCategories() {
 export function getAllFeaturedPlaylists() {
   return axios.get('browse/featured-playlists', {
     headers: { Authorization: `Bearer ${getCookie('access_token')}` },
-    params: { limit: 20, country: 'US' },
+    params: { limit: 4, country: 'US' },
   });
 }

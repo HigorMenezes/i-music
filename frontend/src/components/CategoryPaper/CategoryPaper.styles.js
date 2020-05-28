@@ -21,7 +21,7 @@ export const Paper = styled.div`
 
     ${(props) => `background-image: url(${props.iconUrl});`}
     background-position: center center;
-    background-size: 150px;
+    background-size: cover;
 
     transition: filter 200ms, transform 200ms;
   }

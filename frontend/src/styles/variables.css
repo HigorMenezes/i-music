@@ -1,5 +1,6 @@
 body {
   --text-color: #eeeeee;
+  --subtext-color: #a9a9a9;
   --navbar-color: rgb(34, 34, 53);
   --background-color: rgb(40, 40, 57);
   --body-background-gradient: linear-gradient(to bottom, #4b134f, #c94b4b);

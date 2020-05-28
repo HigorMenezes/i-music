@@ -2,13 +2,9 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import CategoryPaper from '../../components/CategoryPaper';
+import CustomTitle from '../../components/CustomTitle';
 
-import {
-  ListTitle,
-  List,
-  ShowMore,
-  ShowMoreArrow,
-} from './CategoriesList.styles';
+import { List, ShowMore, ShowMoreArrow } from './CategoriesList.styles';
 
 function CategoriesList({ categories }) {
   const [showMoreCategories, setShowMoreCategories] = useState(false);
@@ -16,7 +12,7 @@ function CategoriesList({ categories }) {
 
   return (
     <>
-      <ListTitle>Categories</ListTitle>
+      <CustomTitle>Categories</CustomTitle>
       <List
         ref={listRef}
         style={{

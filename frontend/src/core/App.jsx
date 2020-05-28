@@ -12,7 +12,6 @@ import GlobalStyle from '../styles/GlobalStyle';
 import Main from '../layouts/Main';
 
 import Login from '../pages/Login';
-import Home from '../pages/Home';
 
 function App() {
   return (
@@ -21,9 +20,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/i-music">
-            <Main>
-              <Home />
-            </Main>
+            <Main />
           </Route>
           <Route path="/login" exact>
             <Login />
