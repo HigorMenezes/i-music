@@ -17,7 +17,11 @@ CardListItem.propTypes = {
   id: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
+};
+
+CardListItem.defaultProps = {
+  description: '',
 };
 
 export default CardListItem;

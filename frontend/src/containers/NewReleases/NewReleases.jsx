@@ -20,11 +20,12 @@ function NewReleases() {
   return (
     <div>
       <CustomTitle>New Releases</CustomTitle>
-      <Carousel>
+      <Carousel offset={210}>
         <CardList>
           {albums.map((album) => {
             return (
               <CardListItem
+                key={album.id}
                 id={album.id}
                 imageUrl={album.images[0].url}
                 name={album.name}

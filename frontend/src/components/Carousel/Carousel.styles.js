@@ -5,6 +5,11 @@ export const Container = styled.div`
   display: flex;
 `;
 
+export const Content = styled.div`
+  overflow: hidden;
+  scroll-behavior: smooth;
+`;
+
 export const ActionButton = styled.button`
   width: 35px;
   height: 35px;

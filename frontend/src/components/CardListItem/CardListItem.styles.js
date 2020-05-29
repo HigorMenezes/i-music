@@ -7,7 +7,7 @@ export const Card = styled.li`
 `;
 
 export const Image = styled.img`
-  width: 100%;
+  width: 200px;
   height: auto;
   border-radius: 5px;
 `;

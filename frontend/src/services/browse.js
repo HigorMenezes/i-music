@@ -4,7 +4,7 @@ import { getCookie } from '../utils/cookie';
 export function getAllCategories() {
   return axios.get('/browse/categories', {
     headers: { Authorization: `Bearer ${getCookie('access_token')}` },
-    params: { limit: 5, country: 'US' },
+    params: { limit: 10, country: 'US' },
   });
 }
 

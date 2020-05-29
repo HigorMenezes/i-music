@@ -22,11 +22,12 @@ function FeaturedPlaylists() {
   return (
     <div>
       <CustomTitle>Featured Playlists</CustomTitle>
-      <Carousel>
+      <Carousel offset={210}>
         <CardList>
           {featuredPlaylists.map((featuredPlaylist) => {
             return (
               <CardListItem
+                key={featuredPlaylist.id}
                 id={featuredPlaylist.id}
                 imageUrl={featuredPlaylist.images[0].url}
                 name={featuredPlaylist.name}
