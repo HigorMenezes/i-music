@@ -5,6 +5,6 @@ export const List = styled.ol`
   flex-wrap: wrap;
 
   & > li {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
   }
 `;

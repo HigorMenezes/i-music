@@ -57,6 +57,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: var(--body-background-color);
     background-attachment:fixed;
+    font-size: 12px;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

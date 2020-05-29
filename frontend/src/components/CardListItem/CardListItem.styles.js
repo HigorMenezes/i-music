@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.li`
+export const Card = styled.li`
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -13,6 +13,7 @@ export const Image = styled.img`
 `;
 
 export const Name = styled.h3`
+  font-size: 14px;
   margin: 5px;
   color: var(--text-color);
   font-weight: 600;

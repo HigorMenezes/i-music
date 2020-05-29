@@ -7,4 +7,6 @@ body {
   --player-background-color: transparent;
   --navbar-width: 250px;
   --player-height: 85px;
+
+  --title-font-size: 28px;
 }
