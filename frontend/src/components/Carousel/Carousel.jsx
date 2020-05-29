@@ -8,14 +8,14 @@ import {
   NextIcon,
 } from './Carousel.styles';
 
-function Carousel({ children }) {
+function Carousel({ children, onPrevious, onNext }) {
   return (
     <Container>
-      <ActionButton side="l">
+      <ActionButton onClick={onPrevious}>
         <PreviousIcon />
       </ActionButton>
       <div>{children}</div>
-      <ActionButton side="r">
+      <ActionButton onClick={onNext}>
         <NextIcon />
       </ActionButton>
     </Container>
@@ -27,6 +27,13 @@ Carousel.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
+  onPrevious: PropTypes.func,
+  onNext: PropTypes.func,
+};
+
+Carousel.defaultProps = {
+  onPrevious: null,
+  onNext: null,
 };
 
 export default Carousel;

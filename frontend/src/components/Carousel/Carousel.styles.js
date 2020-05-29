@@ -3,14 +3,16 @@ import { ChevronLeft, ChevronRight } from 'styled-icons/entypo';
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
 `;
 
 export const ActionButton = styled.button`
+  width: 35px;
+  height: 35px;
   border: none;
   background-color: transparent;
   padding: 5px;
   margin: 0px;
+  margin-top: 10px;
   cursor: pointer;
 `;
 
