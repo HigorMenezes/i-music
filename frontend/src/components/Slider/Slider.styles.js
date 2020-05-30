@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { ChevronLeft, ChevronRight } from 'styled-icons/entypo';
+import {
+  ArrowheadRightOutline,
+  ArrowheadLeftOutline,
+} from 'styled-icons/evaicons-outline';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
 export const Content = styled.div`
@@ -26,25 +30,33 @@ export const ListItem = styled.li`
   padding: 5px;
 `;
 
-export const ActionButton = styled.button`
-  width: 35px;
-  height: 60px;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.3);
+export const ActionsContainer = styled.div`
+  align-self: flex-end;
   padding: 5px;
-  margin: 5px 0px;
+`;
+
+export const ActionButton = styled.button`
+  width: 22px;
+  height: 22px;
+  border: none;
+  padding: 2px;
   cursor: pointer;
   outline: none;
+  background-color: transparent;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 `;
 
-export const PreviousIcon = styled(ChevronLeft)`
+export const PreviousIcon = styled(ArrowheadLeftOutline)`
   color: var(--text-color);
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 `;
 
-export const NextIcon = styled(ChevronRight)`
+export const NextIcon = styled(ArrowheadRightOutline)`
   color: var(--text-color);
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 `;

@@ -6,6 +6,7 @@ import {
   Content,
   List,
   ListItem,
+  ActionsContainer,
   ActionButton,
   PreviousIcon,
   NextIcon,
@@ -18,13 +19,6 @@ function Slider({ children, itemsPerSlide }) {
 
   return (
     <Container>
-      <ActionButton
-        onClick={() => {
-          setCurrentSlide((prevState) => (prevState >= 2 ? prevState - 1 : 1));
-        }}
-      >
-        <PreviousIcon />
-      </ActionButton>
       <Content>
         <List itemsPerSlide={itemsPerSlide} currentSlide={currentSlide}>
           {childrenArray.map((child) => (
@@ -32,17 +26,28 @@ function Slider({ children, itemsPerSlide }) {
           ))}
         </List>
       </Content>
-      <ActionButton
-        onClick={() => {
-          setCurrentSlide((prevState) =>
-            prevState < Math.floor(childrenArray.length / itemsPerSlide)
-              ? prevState + 1
-              : childrenArray.length / itemsPerSlide,
-          );
-        }}
-      >
-        <NextIcon />
-      </ActionButton>
+      <ActionsContainer>
+        <ActionButton
+          onClick={() => {
+            setCurrentSlide((prevState) =>
+              prevState >= 2 ? prevState - 1 : 1,
+            );
+          }}
+        >
+          <PreviousIcon />
+        </ActionButton>
+        <ActionButton
+          onClick={() => {
+            setCurrentSlide((prevState) =>
+              prevState < Math.floor(childrenArray.length / itemsPerSlide)
+                ? prevState + 1
+                : childrenArray.length / itemsPerSlide,
+            );
+          }}
+        >
+          <NextIcon />
+        </ActionButton>
+      </ActionsContainer>
     </Container>
   );
 }
