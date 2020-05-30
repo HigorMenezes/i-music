@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { getAllCategories } from '../../services/browse';
 
-import Carousel from '../../components/Carousel';
+import Slider from '../../components/Slider';
 import CustomTitle from '../../components/CustomTitle';
 
-import CardList from '../../components/CardList';
 import CardListItem from '../../components/CardListItem';
 
 function Categories() {
@@ -20,20 +19,18 @@ function Categories() {
   return (
     <div>
       <CustomTitle>Categories</CustomTitle>
-      <Carousel offset={210}>
-        <CardList>
-          {categories.map((category) => {
-            return (
-              <CardListItem
-                key={category.id}
-                id={category.id}
-                imageUrl={category.icons[0].url}
-                name={category.name}
-              />
-            );
-          })}
-        </CardList>
-      </Carousel>
+      <Slider itemsPerSlide={6}>
+        {categories.map((category) => {
+          return (
+            <CardListItem
+              key={category.id}
+              id={category.id}
+              imageUrl={category.icons[0].url}
+              name={category.name}
+            />
+          );
+        })}
+      </Slider>
     </div>
   );
 }

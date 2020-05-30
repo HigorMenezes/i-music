@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 
-export const Card = styled.li`
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-`;
-
 export const Image = styled.img`
-  width: 200px;
+  width: 100%;
   height: auto;
   border-radius: 5px;
 `;

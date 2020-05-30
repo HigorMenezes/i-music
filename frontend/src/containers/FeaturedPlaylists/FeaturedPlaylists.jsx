@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { getAllFeaturedPlaylists } from '../../services/browse';
 
-import Carousel from '../../components/Carousel';
+import Slider from '../../components/Slider';
 import CustomTitle from '../../components/CustomTitle';
 
-import CardList from '../../components/CardList';
 import CardListItem from '../../components/CardListItem';
 
 function FeaturedPlaylists() {
@@ -22,21 +21,19 @@ function FeaturedPlaylists() {
   return (
     <div>
       <CustomTitle>Featured Playlists</CustomTitle>
-      <Carousel offset={210}>
-        <CardList>
-          {featuredPlaylists.map((featuredPlaylist) => {
-            return (
-              <CardListItem
-                key={featuredPlaylist.id}
-                id={featuredPlaylist.id}
-                imageUrl={featuredPlaylist.images[0].url}
-                name={featuredPlaylist.name}
-                description={featuredPlaylist.description}
-              />
-            );
-          })}
-        </CardList>
-      </Carousel>
+      <Slider itemsPerSlide={3}>
+        {featuredPlaylists.map((featuredPlaylist) => {
+          return (
+            <CardListItem
+              key={featuredPlaylist.id}
+              id={featuredPlaylist.id}
+              imageUrl={featuredPlaylist.images[0].url}
+              name={featuredPlaylist.name}
+              description={featuredPlaylist.description}
+            />
+          );
+        })}
+      </Slider>
     </div>
   );
 }
