@@ -1,44 +1,97 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Playlist } from 'styled-icons/boxicons-solid';
+import {
+  Album,
+  Playlist,
+  Music,
+  Microphone,
+} from 'styled-icons/boxicons-solid';
+import { Broadcast } from 'styled-icons/boxicons-regular';
+import { Live } from 'styled-icons/remix-fill';
 
 export const Container = styled.div`
   height: 100%;
-`;
-
-export const MenuTitle = styled.h3`
-  font-size: 14px;
-  color: var(--text-color);
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 4px;
-  padding: 20px;
-`;
-
-export const NavbarItemsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 20px 0px;
 `;
 
-export const LinkItem = styled(Link)`
+export const LinkTitle = styled(Link)`
+  padding: 10px;
+  margin: 10px 0px 20px;
+  cursor: pointer;
+`;
+
+export const Title = styled.h1`
+  position: relative;
+  font-size: 32px;
+  font-family: 'Lobster';
+  color: var(--primary-color);
+  text-align: center;
+`;
+
+export const CustomLink = styled(Link)`
+  position: relative;
   display: flex;
   align-items: center;
+  margin: 0px;
+  padding: 15px 40px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: 900;
 
-  padding: 20px;
+  transition: background-color 300ms;
+
+  & > :not(:last-child) {
+    margin-right: 20px;
+  }
 
   &:hover {
-    background-color: white;
+    background-color: var(--primary-color);
+
+    &::after {
+      background-color: transparent;
+    }
   }
 `;
 
-export const PlayListIcon = styled(Playlist)`
-  width: 24px;
-  height: 24px;
-  margin-right: 20px;
-  color: var(--text-color);
+export const MenuItemText = styled.span`
+  color: inherit;
+  font-size: 14px;
 `;
 
-export const NavbarItemText = styled.span`
-  font-size: 14px;
-  color: var(--text-color);
+export const AlbumIcon = styled(Album)`
+  width: 20px;
+  height: 20px;
+  color: inherit;
+`;
+
+export const ArtistIcon = styled(Microphone)`
+  width: 20px;
+  height: 20px;
+  color: inherit;
+`;
+
+export const EpisodeIcon = styled(Broadcast)`
+  width: 20px;
+  height: 20px;
+  color: inherit;
+`;
+
+export const PlaylistIcon = styled(Playlist)`
+  width: 20px;
+  height: 20px;
+  color: inherit;
+`;
+
+export const ShowIcon = styled(Live)`
+  width: 20px;
+  height: 20px;
+  color: inherit;
+`;
+
+export const TrackIcon = styled(Music)`
+  width: 20px;
+  height: 20px;
+  color: inherit;
 `;

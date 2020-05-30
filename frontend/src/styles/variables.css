@@ -1,8 +1,9 @@
 body {
+  --primary-color: #00d4ff;
   --text-color: #eeeeee;
-  --subtext-color: #a9a9a9;
-  --navbar-background-color: rgb(34, 34, 53);
-  --background-color: rgb(40, 40, 57);
+  --subtext-color: #bdbdbd;
+  --navbar-background-color: #222235;
+  --background-color: #282839;
   --body-background-color: #eeeeee;
   --player-background-color: transparent;
   --navbar-width: 250px;

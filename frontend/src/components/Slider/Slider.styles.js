@@ -28,12 +28,11 @@ export const ListItem = styled.li`
 
 export const ActionButton = styled.button`
   width: 35px;
-  height: 35px;
+  height: 60px;
   border: none;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 5px;
-  margin: 0px;
-  margin-top: 10px;
+  margin: 5px 0px;
   cursor: pointer;
   outline: none;
 `;

@@ -5,7 +5,7 @@ import { getAllFeaturedPlaylists } from '../../services/browse';
 import Slider from '../../components/Slider';
 import CustomTitle from '../../components/CustomTitle';
 
-import CardListItem from '../../components/CardListItem';
+import FeaturedPlaylistCard from '../../components/FeaturedPlaylistCard';
 
 function FeaturedPlaylists() {
   const [featuredPlaylists, setFeaturedPlaylists] = useState([]);
@@ -24,12 +24,11 @@ function FeaturedPlaylists() {
       <Slider itemsPerSlide={3}>
         {featuredPlaylists.map((featuredPlaylist) => {
           return (
-            <CardListItem
+            <FeaturedPlaylistCard
               key={featuredPlaylist.id}
-              id={featuredPlaylist.id}
               imageUrl={featuredPlaylist.images[0].url}
-              name={featuredPlaylist.name}
-              description={featuredPlaylist.description}
+              featuredPlaylistName={featuredPlaylist.name}
+              featuredPlaylistDescription={featuredPlaylist.description}
             />
           );
         })}

@@ -5,7 +5,7 @@ import { getAllCategories } from '../../services/browse';
 import Slider from '../../components/Slider';
 import CustomTitle from '../../components/CustomTitle';
 
-import CardListItem from '../../components/CardListItem';
+import CategoryCard from '../../components/CategoryCard';
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -22,11 +22,10 @@ function Categories() {
       <Slider itemsPerSlide={6}>
         {categories.map((category) => {
           return (
-            <CardListItem
+            <CategoryCard
               key={category.id}
-              id={category.id}
               imageUrl={category.icons[0].url}
-              name={category.name}
+              categoryName={category.name}
             />
           );
         })}

@@ -3,11 +3,16 @@ import { useRouteMatch } from 'react-router-dom';
 
 import {
   Container,
-  MenuTitle,
-  NavbarItemsContainer,
-  LinkItem,
-  PlayListIcon,
-  NavbarItemText,
+  LinkTitle,
+  Title,
+  CustomLink,
+  MenuItemText,
+  AlbumIcon,
+  ArtistIcon,
+  EpisodeIcon,
+  PlaylistIcon,
+  ShowIcon,
+  TrackIcon,
 } from './NavbarMenu.styles';
 
 function NavbarMenu() {
@@ -15,13 +20,33 @@ function NavbarMenu() {
 
   return (
     <Container>
-      <MenuTitle>library</MenuTitle>
-      <NavbarItemsContainer>
-        <LinkItem to={`${url}/tracks`}>
-          <PlayListIcon />
-          <NavbarItemText>Tracks</NavbarItemText>
-        </LinkItem>
-      </NavbarItemsContainer>
+      <LinkTitle to={`${url}/`}>
+        <Title>iMusic</Title>
+      </LinkTitle>
+      <CustomLink to={`${url}/albums`}>
+        <AlbumIcon />
+        <MenuItemText>Albums</MenuItemText>
+      </CustomLink>
+      <CustomLink to={`${url}/artists`}>
+        <ArtistIcon />
+        <MenuItemText>Artists</MenuItemText>
+      </CustomLink>
+      <CustomLink to={`${url}/episodes`}>
+        <EpisodeIcon />
+        <MenuItemText>Episodes</MenuItemText>
+      </CustomLink>
+      <CustomLink to={`${url}/playlists`}>
+        <PlaylistIcon />
+        <MenuItemText>Playlists</MenuItemText>
+      </CustomLink>
+      <CustomLink to={`${url}/shows`}>
+        <ShowIcon />
+        <MenuItemText>Shows</MenuItemText>
+      </CustomLink>
+      <CustomLink to={`${url}/traks`}>
+        <TrackIcon />
+        <MenuItemText>Tracks</MenuItemText>
+      </CustomLink>
     </Container>
   );
 }
