@@ -9,9 +9,8 @@ import {
 import '../styles/variables.css';
 import GlobalStyle from '../styles/GlobalStyle';
 
-import Main from '../layouts/Main';
-
 import Login from '../pages/Login';
+import IMusic from '../pages/IMusic';
 
 function App() {
   return (
@@ -20,9 +19,9 @@ function App() {
       <Router>
         <Switch>
           <Route path="/i-music">
-            <Main />
+            <IMusic />
           </Route>
-          <Route path="/login" exact>
+          <Route path="/login">
             <Login />
           </Route>
           <Redirect to="/login" />

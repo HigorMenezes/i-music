@@ -1,10 +1,7 @@
 import React from 'react';
-import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import NavbarMenu from '../../containers/NavbarMenu';
-
-import Home from '../../pages/Home';
-import Tracks from '../../pages/Tracks';
 
 import {
   Container,
@@ -13,28 +10,23 @@ import {
   PlayerContainer,
 } from './Main.styles';
 
-function Main() {
-  const { path } = useRouteMatch();
-
+function Main({ children }) {
   return (
     <Container>
       <NavbarContainer>
         <NavbarMenu />
       </NavbarContainer>
-      <MainContainer>
-        <Switch>
-          <Route path={`${path}/`} exact>
-            <Home />
-          </Route>
-          <Route path={`${path}/tracks`} exact>
-            <Tracks />
-          </Route>
-          <Redirect to={`${path}/`} />
-        </Switch>
-      </MainContainer>
+      <MainContainer>{children}</MainContainer>
       <PlayerContainer />
     </Container>
   );
 }
+
+Main.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
+};
 
 export default Main;

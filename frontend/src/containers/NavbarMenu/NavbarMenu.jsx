@@ -43,7 +43,7 @@ function NavbarMenu() {
         <ShowIcon />
         <MenuItemText>Shows</MenuItemText>
       </CustomLink>
-      <CustomLink to={`${url}/traks`}>
+      <CustomLink to={`${url}/tracks`}>
         <TrackIcon />
         <MenuItemText>Tracks</MenuItemText>
       </CustomLink>

@@ -59,6 +59,7 @@ const GlobalStyle = createGlobalStyle`
     background-attachment:fixed;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
+    color: var(--text-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
