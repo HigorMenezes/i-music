@@ -20,7 +20,7 @@ function NavbarMenu() {
 
   return (
     <Container>
-      <LinkTitle to={`${url}/`}>
+      <LinkTitle to={`${url}`}>
         <Title>iMusic</Title>
       </LinkTitle>
       <CustomLink to={`${url}/albums`}>
