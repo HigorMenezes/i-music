@@ -14,6 +14,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px 0px;
+
+  .current-route {
+    background-color: var(--primary-color);
+  }
 `;
 
 export const LinkTitle = styled(Link)`
@@ -23,7 +27,6 @@ export const LinkTitle = styled(Link)`
 `;
 
 export const Title = styled.h1`
-  position: relative;
   font-size: 32px;
   font-family: 'Lobster';
   color: var(--primary-color);
@@ -31,7 +34,6 @@ export const Title = styled.h1`
 `;
 
 export const CustomLink = styled(Link)`
-  position: relative;
   display: flex;
   align-items: center;
   margin: 0px;
@@ -46,12 +48,9 @@ export const CustomLink = styled(Link)`
     margin-right: 20px;
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     background-color: var(--primary-color);
-
-    &::after {
-      background-color: transparent;
-    }
   }
 `;
 
