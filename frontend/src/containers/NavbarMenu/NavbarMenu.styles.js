@@ -13,12 +13,12 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px 0px;
+  padding: 10px 0px;
 `;
 
 export const LinkTitle = styled(Link)`
   padding: 10px;
-  margin: 10px 0px 20px;
+  margin-bottom: 20px;
   cursor: pointer;
 `;
 
