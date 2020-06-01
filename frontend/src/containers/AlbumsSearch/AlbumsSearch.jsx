@@ -1,34 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import queryString from 'query-string';
 
-import useQuery from '../../hooks/useQuery';
-import { searchForAlbums } from '../../services/search';
+import { searchForExactAlbums, searchForAlbums } from '../../services/search';
 
-import NewReleaseCard from '../../components/NewReleaseCard';
+import AlbumSearchBestResults from '../../components/AlbumSearchBestResults';
+import AlbumSearchResults from '../../components/AlbumSearchResults';
 
 function AlbumsSearch() {
-  const query = useQuery();
   const [albums, setAlbums] = useState([]);
+  const [bestResults, setBestResults] = useState([]);
+  const { search } = useLocation();
 
   useEffect(() => {
-    searchForAlbums(query.get('search')).then(({ data }) => {
+    const query = queryString.parse(search);
+
+    searchForExactAlbums(query.search).then(({ data }) => {
+      setBestResults((data && data.albums && data.albums.items) || []);
+    });
+    searchForAlbums(query.search).then(({ data }) => {
       setAlbums((data && data.albums && data.albums.items) || []);
     });
-  }, [query.get('search')]);
+  }, [search]);
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: 20 }}>
-      {albums.map((album) => {
-        return (
-          <div key={album.id} style={{ width: '25%', padding: 10 }}>
-            <NewReleaseCard
-              imageUrl={album.images[0].url}
-              newReleaseArtists={album.artists.map((artist) => artist.name)}
-              newReleaseName={album.name}
-            />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      {bestResults.length > 0 && (
+        <AlbumSearchBestResults bestResults={bestResults} />
+      )}
+
+      <AlbumSearchResults
+        albums={albums}
+        ignores={bestResults.map((bestResult) => bestResult.id)}
+      />
+    </>
   );
 }
 

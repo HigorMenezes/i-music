@@ -4,7 +4,7 @@ import { SearchAlt2 } from 'styled-icons/boxicons-regular';
 export const Container = styled.form`
   height: var(--search-bar-height);
   max-width: 500px;
-  margin: 0px auto;
+  margin: 10px auto;
 
   display: flex;
   align-items: center;
