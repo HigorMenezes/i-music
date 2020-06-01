@@ -6,8 +6,10 @@ body {
   --background-color: #282839;
   --body-background-color: #eeeeee;
   --player-background-color: transparent;
+
   --navbar-width: 250px;
   --player-height: 85px;
+  --search-bar-height: 45px;
 
   --title-font-size: 28px;
 }

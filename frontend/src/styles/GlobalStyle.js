@@ -58,6 +58,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--body-background-color);
     background-attachment:fixed;
     font-size: 14px;
+    font-weight: 400;
     font-family: 'Lato', sans-serif;
     color: var(--text-color);
     -webkit-font-smoothing: antialiased;
