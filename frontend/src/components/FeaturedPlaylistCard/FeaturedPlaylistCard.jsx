@@ -10,7 +10,12 @@ function FeaturedPlaylistCard({
 }) {
   return (
     <div>
-      <Image src={imageUrl} alt={featuredPlaylistName} />
+      <Image
+        src={imageUrl}
+        alt={featuredPlaylistName}
+        height="100"
+        width="100"
+      />
       <Name>{featuredPlaylistName}</Name>
       <Description>{featuredPlaylistDescription}</Description>
     </div>

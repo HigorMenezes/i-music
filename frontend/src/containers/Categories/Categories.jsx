@@ -9,17 +9,23 @@ import CategoryCard from '../../components/CategoryCard';
 
 function Categories() {
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getAllCategories().then(({ data }) => {
-      setCategories((data && data.categories && data.categories.items) || []);
-    });
+    setLoading(true);
+    getAllCategories()
+      .then(({ data }) => {
+        setCategories((data && data.categories && data.categories.items) || []);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (
     <div>
       <CustomTitle>Categories</CustomTitle>
-      <Slider itemsPerSlide={6}>
+      <Slider itemsPerSlide={6} loading={loading}>
         {categories.map((category) => {
           return (
             <CategoryCard

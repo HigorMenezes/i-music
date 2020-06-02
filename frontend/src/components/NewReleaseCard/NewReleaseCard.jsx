@@ -6,7 +6,7 @@ import { Image, Name, Artists } from './NewReleaseCard.styles';
 function NewReleaseCard({ imageUrl, newReleaseName, newReleaseArtists }) {
   return (
     <div>
-      <Image src={imageUrl} alt={newReleaseName} />
+      <Image src={imageUrl} alt={newReleaseName} height="100" width="100" />
       <Name>{newReleaseName}</Name>
       <Artists>{newReleaseArtists.join(', ')}</Artists>
     </div>

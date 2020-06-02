@@ -6,6 +6,7 @@ body {
   --background-color: #282839;
   --body-background-color: #eeeeee;
   --player-background-color: transparent;
+  --loading-bg-color: rgba(255, 255, 255, 0.1);
 
   --navbar-width: 250px;
   --player-height: 85px;

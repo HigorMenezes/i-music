@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import CardLoader from '../CardLoader';
+
 import {
   Container,
   Content,
@@ -12,18 +14,30 @@ import {
   NextIcon,
 } from './Slider.styles';
 
-function Slider({ children, itemsPerSlide }) {
+function Slider({ children, itemsPerSlide, loading }) {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   const childrenArray = React.Children.toArray(children);
+
+  function renderLoader() {
+    return Array.from({ length: itemsPerSlide }, (_, k) => (
+      <ListItem key={k}>
+        <CardLoader />
+      </ListItem>
+    ));
+  }
+
+  function renderChildren() {
+    return childrenArray.map((child) => (
+      <ListItem key={child.key}>{child}</ListItem>
+    ));
+  }
 
   return (
     <Container>
       <Content>
         <List itemsPerSlide={itemsPerSlide} currentSlide={currentSlide}>
-          {childrenArray.map((child) => (
-            <ListItem key={child.key}>{child}</ListItem>
-          ))}
+          {loading ? renderLoader() : renderChildren()}
         </List>
       </Content>
       <ActionsContainer>
@@ -58,6 +72,11 @@ Slider.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
   itemsPerSlide: PropTypes.number.isRequired,
+  loading: PropTypes.bool,
+};
+
+Slider.defaultProps = {
+  loading: false,
 };
 
 export default Slider;

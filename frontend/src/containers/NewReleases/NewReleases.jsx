@@ -9,17 +9,23 @@ import NewReleaseCard from '../../components/NewReleaseCard';
 
 function NewReleases() {
   const [albums, setAlbums] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getAllNewReleases().then(({ data }) => {
-      setAlbums((data && data.albums && data.albums.items) || []);
-    });
+    setLoading(true);
+    getAllNewReleases()
+      .then(({ data }) => {
+        setAlbums((data && data.albums && data.albums.items) || []);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (
     <div>
       <CustomTitle>New Releases</CustomTitle>
-      <Slider itemsPerSlide={4}>
+      <Slider itemsPerSlide={4} loading={loading}>
         {albums.map((album) => {
           return (
             <NewReleaseCard

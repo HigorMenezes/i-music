@@ -6,7 +6,7 @@ import { Image, Name } from './CategoryCard.styles';
 function CategoryCard({ imageUrl, categoryName }) {
   return (
     <div>
-      <Image src={imageUrl} alt={categoryName} />
+      <Image src={imageUrl} alt={categoryName} height="100" width="100" />
       <Name>{categoryName}</Name>
     </div>
   );
