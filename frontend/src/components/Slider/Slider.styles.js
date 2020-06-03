@@ -9,6 +9,11 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Content = styled.div`
   overflow: hidden;
 `;
@@ -43,20 +48,26 @@ export const ActionButton = styled.button`
   cursor: pointer;
   outline: none;
   background-color: transparent;
+  color: var(--subtext-color);
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+  &:not(:disabled):hover,
+  &:not(:disabled):active {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+  }
+
+  &:disabled {
+    color: rgba(255, 255, 255, 0.1);
+    cursor: default;
   }
 `;
 
 export const PreviousIcon = styled(ArrowheadLeftOutline)`
-  color: var(--text-color);
   width: 18px;
   height: 18px;
 `;
 
 export const NextIcon = styled(ArrowheadRightOutline)`
-  color: var(--text-color);
   width: 18px;
   height: 18px;
 `;

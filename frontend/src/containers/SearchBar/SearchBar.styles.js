@@ -40,8 +40,7 @@ export const SearchButton = styled.button`
   color: var(--subtext-color);
 
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     background-color: rgba(0, 0, 0, 0.1);
     color: var(--text-color);
   }

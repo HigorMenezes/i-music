@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { getAllNewReleases } from '../../services/browse';
 
 import Slider from '../../components/Slider';
-import CustomTitle from '../../components/CustomTitle';
 
 import NewReleaseCard from '../../components/NewReleaseCard';
 
@@ -24,8 +23,7 @@ function NewReleases() {
 
   return (
     <div>
-      <CustomTitle>New Releases</CustomTitle>
-      <Slider itemsPerSlide={4} loading={loading}>
+      <Slider title="New Releases" itemsPerSlide={5} loading={loading}>
         {albums.map((album) => {
           return (
             <NewReleaseCard

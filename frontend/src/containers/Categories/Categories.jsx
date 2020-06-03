@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { getAllCategories } from '../../services/browse';
 
 import Slider from '../../components/Slider';
-import CustomTitle from '../../components/CustomTitle';
 
 import CategoryCard from '../../components/CategoryCard';
 
@@ -24,8 +23,7 @@ function Categories() {
 
   return (
     <div>
-      <CustomTitle>Categories</CustomTitle>
-      <Slider itemsPerSlide={6} loading={loading}>
+      <Slider title="Categories" itemsPerSlide={6} loading={loading}>
         {categories.map((category) => {
           return (
             <CategoryCard

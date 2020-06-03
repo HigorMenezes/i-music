@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { getAllFeaturedPlaylists } from '../../services/browse';
 
 import Slider from '../../components/Slider';
-import CustomTitle from '../../components/CustomTitle';
 
 import FeaturedPlaylistCard from '../../components/FeaturedPlaylistCard';
 
@@ -26,8 +25,7 @@ function FeaturedPlaylists() {
 
   return (
     <div>
-      <CustomTitle>Featured Playlists</CustomTitle>
-      <Slider itemsPerSlide={3} loading={loading}>
+      <Slider title="Featured Playlists" itemsPerSlide={4} loading={loading}>
         {featuredPlaylists.map((featuredPlaylist) => {
           return (
             <FeaturedPlaylistCard

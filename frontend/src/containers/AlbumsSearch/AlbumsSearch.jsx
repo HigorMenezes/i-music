@@ -15,12 +15,17 @@ function AlbumsSearch() {
   useEffect(() => {
     const query = queryString.parse(search);
 
-    searchForExactAlbums(query.search).then(({ data }) => {
-      setBestResults((data && data.albums && data.albums.items) || []);
-    });
-    searchForAlbums(query.search).then(({ data }) => {
-      setAlbums((data && data.albums && data.albums.items) || []);
-    });
+    if (query.search) {
+      searchForExactAlbums(query.search).then(({ data }) => {
+        setBestResults((data && data.albums && data.albums.items) || []);
+      });
+      searchForAlbums(query.search).then(({ data }) => {
+        setAlbums((data && data.albums && data.albums.items) || []);
+      });
+    } else {
+      setAlbums([]);
+      setBestResults([]);
+    }
   }, [search]);
 
   return (
@@ -29,10 +34,12 @@ function AlbumsSearch() {
         <AlbumSearchBestResults bestResults={bestResults} />
       )}
 
-      <AlbumSearchResults
-        albums={albums}
-        ignores={bestResults.map((bestResult) => bestResult.id)}
-      />
+      {albums.length > 0 && (
+        <AlbumSearchResults
+          albums={albums}
+          ignores={bestResults.map((bestResult) => bestResult.id)}
+        />
+      )}
     </>
   );
 }

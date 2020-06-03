@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CustomTitle from '../CustomTitle';
-import NewReleaseCard from '../NewReleaseCard';
+import AlbumCard from '../AlbumCard';
 
 import { Content, Item } from './AlbumSearchResults.styles';
 
@@ -16,10 +16,10 @@ function AlbumSearchResults({ albums, ignores }) {
           .map((album) => {
             return (
               <Item key={album.id}>
-                <NewReleaseCard
+                <AlbumCard
                   imageUrl={album.images[0].url}
-                  newReleaseArtists={album.artists.map((artist) => artist.name)}
-                  newReleaseName={album.name}
+                  artists={album.artists.map((artist) => artist.name)}
+                  name={album.name}
                 />
               </Item>
             );

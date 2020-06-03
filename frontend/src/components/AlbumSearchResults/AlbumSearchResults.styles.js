@@ -6,6 +6,6 @@ export const Content = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 25%;
-  padding: 5px;
+  width: 20%;
+  padding: 10px;
 `;
