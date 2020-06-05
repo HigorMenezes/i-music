@@ -1,6 +1,12 @@
 import axios from '../core/axios';
 import { getCookie } from '../utils/cookie';
 
+export function fetchMore(url) {
+  return axios.get(url, {
+    headers: { Authorization: `Bearer ${getCookie('access_token')}` },
+  });
+}
+
 export function searchForExactAlbums(album = '') {
   return axios.get('/search', {
     headers: { Authorization: `Bearer ${getCookie('access_token')}` },
