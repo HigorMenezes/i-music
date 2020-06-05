@@ -20,3 +20,10 @@ export function searchForAlbums(album = '') {
     params: { q: `album:${album}`, type: 'album', limit: 20 },
   });
 }
+
+export function searchForArtists(artist = '') {
+  return axios.get('/search', {
+    headers: { Authorization: `Bearer ${getCookie('access_token')}` },
+    params: { q: `artist:${artist}`, type: 'artist', limit: 4 },
+  });
+}

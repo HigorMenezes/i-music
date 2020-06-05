@@ -33,6 +33,7 @@ function AlbumsSearch() {
     } else {
       setAlbums([]);
       setBestResults([]);
+      setFetchMoreAlbumsUrl('');
     }
   }, [search]);
 
@@ -63,6 +64,7 @@ function AlbumsSearch() {
           ignores={bestResults.map((bestResult) => bestResult.id)}
         />
       )}
+
       {fetchMoreAlbumsUrl && (
         <FetchMoreButton onClick={handleFetchMoreAlbumsUrl} loading={loading}>
           Fetch more

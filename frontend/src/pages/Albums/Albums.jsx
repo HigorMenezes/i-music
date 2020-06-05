@@ -3,12 +3,14 @@ import React from 'react';
 import SearchBar from '../../containers/SearchBar';
 import AlbumsSearch from '../../containers/AlbumsSearch';
 
+import { Container } from './Albums.styles';
+
 function Albums() {
   return (
-    <div style={{ maxWidth: '1100px', margin: '10px auto' }}>
+    <Container>
       <SearchBar placeHolder="Search for a album" />
       <AlbumsSearch />
-    </div>
+    </Container>
   );
 }
 

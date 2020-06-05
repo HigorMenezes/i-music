@@ -1,12 +1,16 @@
 import React from 'react';
 
 import SearchBar from '../../containers/SearchBar';
+import ArtistsSearch from '../../containers/ArtistsSearch';
+
+import { Container } from './Artists.styles';
 
 function Artists() {
   return (
-    <div>
-      <SearchBar placeHolder="Search for a album" />
-    </div>
+    <Container>
+      <SearchBar placeHolder="Search for a artist" />
+      <ArtistsSearch />
+    </Container>
   );
 }
 
