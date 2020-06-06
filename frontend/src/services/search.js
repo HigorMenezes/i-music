@@ -27,3 +27,10 @@ export function searchForArtists(artist = '') {
     params: { q: `artist:${artist}`, type: 'artist', limit: 4 },
   });
 }
+
+export function searchForEpisodes(episode = '') {
+  return axios.get('/search', {
+    headers: { Authorization: `Bearer ${getCookie('access_token')}` },
+    params: { q: `episode:${episode}`, type: 'episode', limit: 20 },
+  });
+}
