@@ -17,7 +17,9 @@ function FeaturedPlaylistCard({
         width="100"
       />
       <Name>{featuredPlaylistName}</Name>
-      <Description>{featuredPlaylistDescription}</Description>
+      <Description
+        dangerouslySetInnerHTML={{ __html: featuredPlaylistDescription }}
+      />
     </div>
   );
 }

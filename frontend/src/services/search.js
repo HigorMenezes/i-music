@@ -34,3 +34,17 @@ export function searchForEpisodes(episode = '') {
     params: { q: `episode:${episode}`, type: 'episode', limit: 20 },
   });
 }
+
+export function searchForExactPlaylists(playlist = '') {
+  return axios.get('/search', {
+    headers: { Authorization: `Bearer ${getCookie('access_token')}` },
+    params: { q: `playlist:"${playlist}"`, type: 'playlist', limit: 1 },
+  });
+}
+
+export function searchForPlaylists(playlist = '') {
+  return axios.get('/search', {
+    headers: { Authorization: `Bearer ${getCookie('access_token')}` },
+    params: { q: `playlist:${playlist}`, type: 'playlist', limit: 20 },
+  });
+}

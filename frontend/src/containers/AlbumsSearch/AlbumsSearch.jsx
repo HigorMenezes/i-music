@@ -15,7 +15,7 @@ import FetchMoreButton from '../../components/FetchMoreButton';
 function AlbumsSearch() {
   const [albums, setAlbums] = useState([]);
   const [fetchMoreAlbumsUrl, setFetchMoreAlbumsUrl] = useState('');
-  const [bestResults, setBestResults] = useState([]);
+  const [bestAlbumResults, setBestAlbumResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const { search } = useLocation();
 
@@ -24,7 +24,7 @@ function AlbumsSearch() {
 
     if (query.search) {
       searchForExactAlbums(query.search).then(({ data }) => {
-        setBestResults((data && data.albums && data.albums.items) || []);
+        setBestAlbumResults((data && data.albums && data.albums.items) || []);
       });
       searchForAlbums(query.search).then(({ data }) => {
         setAlbums((data && data.albums && data.albums.items) || []);
@@ -32,7 +32,7 @@ function AlbumsSearch() {
       });
     } else {
       setAlbums([]);
-      setBestResults([]);
+      setBestAlbumResults([]);
       setFetchMoreAlbumsUrl('');
     }
   }, [search]);
@@ -54,14 +54,14 @@ function AlbumsSearch() {
 
   return (
     <>
-      {bestResults.length > 0 && (
-        <AlbumSearchBestResults bestResults={bestResults} />
+      {bestAlbumResults.length > 0 && (
+        <AlbumSearchBestResults bestResults={bestAlbumResults} />
       )}
 
       {albums.length > 0 && (
         <AlbumSearchResults
           albums={albums}
-          ignores={bestResults.map((bestResult) => bestResult.id)}
+          ignores={bestAlbumResults.map((bestResult) => bestResult.id)}
         />
       )}
 

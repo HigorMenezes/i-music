@@ -22,4 +22,8 @@ export const Description = styled.p`
   color: var(--subtext-color);
   font-weight: 500;
   margin: 5px;
+
+  a {
+    color: var(--primary-color);
+  }
 `;
